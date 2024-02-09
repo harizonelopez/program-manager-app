@@ -4,7 +4,7 @@ from datetime import datetime
 from tkcalendar import DateEntry
 
 class Task:
-    def __init__(self, title, description, due_date, completed=False, completed_date=None):
+    def __init__(self, title, description, due_date, completed = False, completed_date = None):
         self.title = title
         self.description = description
         self.due_date = due_date
@@ -109,4 +109,3 @@ if __name__ == '__main__':
     root = tk.Tk()
     app = Task_Manager_App(root)
     app.run()
-
