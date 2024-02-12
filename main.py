@@ -3,7 +3,6 @@ from tkinter import messagebox
 from datetime import datetime
 from tkcalendar import DateEntry
 
-
 class Task:
     def __init__(self, title, description, due_date, completed = False, completed_date = None):
         self.title = title
@@ -17,18 +16,18 @@ class Task_Manager_App:
         self.master = master
         self.master.title("Dev_@ladinh production         Program Manager App")
         self.master.geometry("400x450")
-        self.master.config(background="gray")
+        self.master.config(background = "gray")
         self.master.resizable(False, False)
 
         self.tasks = []
         
-        self.header_label = tk.Label(master, bg="gray", fg="blue", text = " A Program Manager App ")
+        self.header_label = tk.Label(master, bg = "gray", fg = "blue", text = " A Program Manager App ")
         self.header_label.place(x=130, y=20)
 
-        self.title_label = tk.Label(master, text=" Title of the Task ", bg="gray", fg="blue")     
+        self.title_label = tk.Label(master, text = " Title of the Task ", bg = "gray", fg="blue")     
         self.title_label.place(x=40, y=80)
 
-        self.title_entry = tk.Entry(master, bg="lightgray", fg="blue")
+        self.title_entry = tk.Entry(master, bg = "lightgray", fg="blue")
         self.title_entry.place(x=33, y=100)
         
         self.desc_label = tk.Label(master, text=" Task description ", bg="gray", fg="blue")
@@ -83,7 +82,6 @@ class Task_Manager_App:
     def delete_task(self):
         selected_task_index = self.task_listbox.curselection()
 
-
         if selected_task_index:
             self.tasks.pop(selected_task_index[0])
             self.update_task_listbox()
@@ -92,7 +90,6 @@ class Task_Manager_App:
         self.task_listbox.delete(0, tk.END) 
         for task in self.tasks:
             task_info = f"{task.title} - {task.due_date}"
-
 
             if task.completed:
                 task_info += f" (Completed on {task.completed_date})"
@@ -113,3 +110,4 @@ if __name__ == '__main__':
     root = tk.Tk()
     app = Task_Manager_App(root)
     app.run()
+
