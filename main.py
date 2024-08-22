@@ -14,7 +14,7 @@ class Task:
 class Task_Manager_App:
     def __init__(self, master):
         self.master = master
-        self.master.title("Dev_@ladinh production         Program Manager App")
+        self.master.title("Dev_@ladinh production Program Manager App")
         self.master.geometry("400x450")
         self.master.config(background="gray")
         self.master.resizable(False, False)
